@@ -7,8 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="preloader">
+            <div id="status">&nbsp;</div>
+  </div>
 
+   <header>
+      <%= render 'layouts/navigation' %>
+    </header>
 <%= yield %>
+
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>

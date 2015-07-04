@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'devise'
 
+gem 'stripe'
+
+gem 'high_voltage'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password

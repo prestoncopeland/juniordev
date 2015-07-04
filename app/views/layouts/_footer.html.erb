@@ -3,8 +3,8 @@
                 <div class="row footer">
                     <div class="col-md-4">
                         <div class="single-footer">
-                            <img src="img/footer-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati architecto quaerat facere blanditiis tempora sequi nulla accusamus, possimus cum necessitatibus suscipit quia autem mollitia, similique quisquam molestias. Vel unde, blanditiis.</p>
+                            <%= image_tag("footer-logo.png", :data => {:'wow-delay' => '1s'}) %>
+                            <p>The premise is simple: Junior Software Developer only lists junior positions. It's an ideal place for both employers to post and potential employees to search for entry-level developer jobs.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="row footer-copy">
-                    <p><span>All rights reserved</span> | <span>A Ruby on Rails site by <a href="http://threemonthcoder.com"> Preston Copeland</a> </span> | <span> Template by <a href="https://dribbble.com/siblu">Eftakher Alam</a> and <a href="http://ohidul.me">Ohidul Islam</a></span> </p>
+                    <p><span>All rights reserved</span> | <span>A Ruby on Rails site by <%= link_to("Preston Copeland", "http://threemonthcoder.com", :target => "blank") %> </span> | <span> Template by <%= link_to("Eftakher Alam", "https://dribbble.com/siblu", :target => "blank") %> and <%= link_to("Ohidul Islam", "http://ohidul.me", :target => "blank") %> </span> </p>
                 </div>
             </div>
         </div>

@@ -28,6 +28,8 @@ gem 'stripe'
 
 gem 'high_voltage'
 
+gem 'country_select'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password

@@ -2,6 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$blue: #00AEEF;
+
 .slider-content h2 {
   color: black;
 }
@@ -10,3 +12,29 @@
   color: black;
 }
 
+.boxed {
+  border: 1px solid;
+  padding: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+}
+
+.centered {
+  padding: 5px;
+  margin-left:auto;
+  margin-right:auto;
+  width:80%;
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: $blue;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}

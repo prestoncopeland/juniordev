@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
 
 
   has_many :jobs
+  accepts_nested_attributes_for :jobs, allow_destroy: true, reject_if: :all_blank
+
+  validates_associated :jobs
+  validates :name, presence: true
+
 
   def set_default_role
     self.role ||= :user

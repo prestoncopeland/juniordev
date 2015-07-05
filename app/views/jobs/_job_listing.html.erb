@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row page-title text-center wow bounce"  data-wow-delay="1s">
+    <h2>Jobs</h2>
+  </div>
+
+<div class="row jobs">
+  <div class="col-md-9">
+    <div class="job-posts table-responsive">
+      <table class="table">
+        <% @jobs.each_with_index do |job, index| %>
+          <tr class="odd wow fadeInUp" data-wow-delay="<%(1+index).to_s%>s">
+        <!--The above is to stagger the appearance of the jobs in the table -->
+          <td class="tbl-title"><h4><%=job.title%> <br><span class="job-type"><%=job.job_type.humanize%></span></h4></td>
+
+          <td><p><%=job.user.name%></p></td>
+
+          <td><p><i class="glyphicon glyphicon-globe"></i> <%=job.city%>, <%= job.state.nil? ? job.country : job.state %></p></td>
+
+          <td><p><%=job.salary%></p></td>
+
+          <td class="tbl-apply"><a href="#">See More</a></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+
+</div>
+<div class="col-md-3 hidden-sm">
+    <div class="job-add wow fadeInRight animated" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeInRight;">
+      <h2>Want to Post a Job?</h2>
+        <%= link_to "Post a Job", new_user_registration_path%>
+    </div>
+  </div>
+</div>
+
+<hr>

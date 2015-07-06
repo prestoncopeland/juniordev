@@ -1,8 +1,22 @@
 class JobsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show, :search]
 
   def index
-    @jobs = Job.where("DateTime.new - created_at <= 30")
+    @jobs = Job.where('created_at <= 30.days.ago')
+  end
+
+  def search
+    @term = params[:search]
+    @jobs = Job.where('created_at <= 30.days.ago')
+    if params[:search].present?
+      @query = Job.search do
+          keywords params[:search]
+          paginate :page => params[:page], :per_page => 10
+      end
+      @jobs = @query.results
+    else
+      @jobs = []
+    end
   end
 
   def show

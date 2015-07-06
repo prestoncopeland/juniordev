@@ -7,7 +7,7 @@
   <div class="col-md-9">
     <div class="job-posts table-responsive">
       <table class="table">
-        <% @jobs.each_with_index do |job, index| %>
+        <% jobs.each_with_index do |job, index| %>
           <tr class="odd wow fadeInUp" data-wow-delay="<%(1+index).to_s%>s">
         <!--The above is to stagger the appearance of the jobs in the table -->
           <td class="tbl-title"><h4><%=job.title%> <br><span class="job-type"><%=job.job_type.humanize%></span></h4></td>

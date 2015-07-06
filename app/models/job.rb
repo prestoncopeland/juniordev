@@ -1,4 +1,6 @@
 class Job < ActiveRecord::Base
+
+
   belongs_to :user
 
   enum job_type: [:all_types, :full_time, :contract, :remote, :freelance]
@@ -9,6 +11,11 @@ class Job < ActiveRecord::Base
 
   def set_default_job_type
     self.job_type ||= :all_types
+  end
+
+  searchable do
+    text :title, :description, :salary, :job_type
+    text :city, :state, :country, :zip_code
   end
 
 end

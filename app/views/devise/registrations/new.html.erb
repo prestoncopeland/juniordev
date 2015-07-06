@@ -3,15 +3,28 @@
   <%= render 'javascript' %>
 <% end %>
 
+<div class="container boxed">
+<h1>Post A Job!</h1>
+
+        <h3>Terms and Conditions</h3>
+      <p>JuniorSoftwareDeveloper.com is a job board for employers seeking fresh talent and developers seeking junior positions. Submitting this form will ensure a job posting for 30 days. The jobs are listed by date, with the most recent listed first.</p>
+
+        <h3>Cost</h3>
+      <p>Inaugural Special! $50.00 nets a 30-day posting, with JuniorSoftwareDeveloper.com reserving the right to partially refund payment for job listings that fail to meet its listing criteria.</p>
+
+        <h3>Listing Criteria</h3>
+      <p>JuniorSoftwareDeveloper.com is not liable for the accuracy of information contained within a given job post. Furthermore, it reserves the right to remove posts it deems racist, pornographic, illegal, or otherwise hazardous. Posters must have the right to represent their companies. Posters must be over 18.</p>
+
+</div> <!-- end div container -->
 <div class="centered">
-<h1>Post A Job</h1>
+   <h2>Company Information</h2>
+
+</div> <!-- end class centered -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => { :role => 'form', :class => 'payment-form'}) do |f| %>
 
-  <h2>Company Information</h2>
-
-</div>
   <div class='fieldset boxed'>
+
   <div id='stripe_error' class='alert alert-danger' style='display:none' ></div>
   <%= devise_error_messages! %>
 
@@ -26,12 +39,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Contact email" %> <br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :telephone %><br />
+    <%= f.label :telephone %> <em>(won't be shared)</em><br />
     <%= f.text_field :telephone %>
   </div>
 
@@ -47,6 +60,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+
   </div> <!-- end fieldset boxed -->
 
   <div class="centered">
@@ -68,11 +83,11 @@
 
       <div class="field">
         <%= ff.label 'Description' %>
-        <%= ff.text_area :description, :rows=>20, :cols=>100, placeholder: "e.g., Requirements, Responsibilities, Benefits, etc." %>
+        <%= ff.text_area :description, :rows=>20, :cols=>100, placeholder: %{e.g., Overview: Seeking a junior developer who is passionate about --- ... Qualifications: You should have a strong portfolio ... Responsibilities: For this position, you will ... Benefits: We offer ... etc.} %>
       </div>
 
       <div class="field">
-        <%= ff.label 'Salary' %>
+        <%= ff.label 'Salary' %> <em>('DOE' is default; feel free to change)</em>
         <%= ff.text_field :salary %>
       </div>
 
@@ -101,7 +116,7 @@
 
   <div class="centered">
 
-  <h2>Payment</h2>
+  <h2>Payment (securely processed with Stripe)</h2>
   <% if resource.stripe_token %>
       <p>Credit card acceptance is pending.</p>
   <% else %>
@@ -132,10 +147,10 @@
   </div> <!-- end class boxed -->
 
 
-  <div class ="centered">
-    <%= f.submit "Post Job", :class => "navbar-btn nav-button wow bounceInRicht login"%>
+  <div class="centered">
+    <%= f.submit "Post Job", :class => "navbar-btn nav-button wow bounceInRight login"%>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
 

@@ -21,6 +21,7 @@ class VisitorsController < ApplicationController
     @visitor = Visitor.new(visitor_params)
 
       if @visitor.save
+        MailingListSignupJob.perform_later @visitor
         redirect_to root_path, notice: 'Successfully subscribed to list.'
       else
         render :new

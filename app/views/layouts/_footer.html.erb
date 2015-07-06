@@ -2,13 +2,16 @@
             <div class="container">
                 <div class="row footer">
                     <div class="col-md-4">
+                        <div class="single-footer mailing">
+                            <p>Would you like to join Junior Software Developer's mailing list? Sign up here!</p>
+                            <%= link_to "Subscribe", new_visitor_path, :class => "navbar-btn nav-button wow bounceInRight login" %>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="single-footer">
                             <%= image_tag("JuniorSoftwareDeveloper-logo.png", size: "300x100")%>
                             <p>The premise is simple: Junior Software Developer only lists junior positions. It's the best place for both employers to post and potential employees to search for entry-level and/or junior developer jobs.</p>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-
                     </div>
                     <div class="col-md-4">
                         <div class="single-footer">

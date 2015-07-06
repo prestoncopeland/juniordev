@@ -36,6 +36,12 @@ gem 'jquery-ui-rails'
 
 gem 'will_paginate', '~> 3.0.7'
 
+gem 'simple_form'
+
+gem 'gibbon'
+
+gem 'sucker_punch'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do

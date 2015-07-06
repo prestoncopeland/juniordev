@@ -1,6 +1,7 @@
 module FormHelper
 def us_states
     [
+      ['none', ''],
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],
       ['Arizona', 'AZ'],

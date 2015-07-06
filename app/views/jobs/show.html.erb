@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1>
+          <%= @job.title %>
+        </h1>
+        <p> <%= @job.user.name %>
+        </p>
+        <p>
+          Apply at: <%= @job.user.email%>
+        </p>
+        <p>
+          Company website: <%= link_to @job.user.website, "http://#{@job.user.website}"%>
+        </p>
+        <p>
+          <%= link_to "Back to All Listings", root_path %>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                Contact Email: <%= @job.user.email %>
+              </h3>
+            </div>
+            <div class="panel-body">
+              Job Type: <%= @job.job_type.humanize %>
+            </div>
+            <div class="panel-body">
+              Salary: <%= @job.salary %>
+            </div>
+            <div class="panel-body">
+              Location: <%= @job.city%><% unless @job.state.empty?%>, <%=@job.state%><% end %>, <%=@job.country%>
+            </div>
+            <% unless @job.zip_code.empty? %>
+            <div class="panel-footer">
+              Zip Code: <%= @job.zip_code %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-8">
+          <h2>
+            <%= @job.user.name %>
+          </h2>
+          <p>
+            <%= @job.description %>
+          </p>
+          <p>
+            <strong>Posted:</strong> <%= @job.created_at.strftime('%B %-d, %Y') %>
+          </p>
+          <p>
+          <%= link_to "Back to All Listings", root_path %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,8 +10,19 @@
 <div class = "centered">
 <h2>Search Results</h2>
 <p>Found: <%= @jobs.total_entries %></p>
+<p><%= will_paginate @jobs %></p>
 </div>
-<p>
-<%= will_paginate @jobs %>
-</p>
+
+<div class="search-form wow pulse searchcentered" data-wow-delay="0.8s">
+<%= form_tag search_jobs_path, :method => :get do %>
+
+        <%= text_field_tag 'search', nil, placeholder: 'Search by job title, location, salary, etc.', size: 50%>
+        <%= submit_tag "Search", :class => "navbar-btn nav-button wow bounceInRight login", :data => { :'wow-delay' => '0.8s' }%>
+<% end %>
+</div>
+
+
+
+
+
 <%= render "job_listing", jobs: @jobs %>

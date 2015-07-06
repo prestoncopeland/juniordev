@@ -17,6 +17,9 @@
 
 </div> <!-- end div container -->
 <div class="centered">
+  <p>All fields below are required except zip code and state.</p>
+</div>
+<div class="centered">
    <h2>Company Information</h2>
 
 </div> <!-- end class centered -->
@@ -34,17 +37,17 @@
   </div>
 
   <div class="field">
-    <%= f.label "Company website" %><br />
-    <%= f.text_field :website %>
+    <%= f.label "Company website" %> <em>(don't include http://www)</em><br />
+    <%= f.text_field :website, placeholder: "e.g., greatdevs.com" %>
   </div>
 
   <div class="field">
-    <%= f.label "Contact email" %> <br />
+    <%= f.label "Contact email for applicants"%> <em>(this will also be your login email)</em> <br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :telephone %> <em>(won't be shared)</em><br />
+    <%= f.label :telephone %> <em>(won't be shared or listed)</em><br />
     <%= f.text_field :telephone %>
   </div>
 
@@ -87,7 +90,7 @@
       </div>
 
       <div class="field">
-        <%= ff.label 'Salary' %> <em>('DOE' is default; feel free to change)</em>
+        <%= ff.label 'Salary' %> <em>('DOE' is default; feel free to change; use this format: $90,000 or $60,000-85,000)</em>
         <%= ff.text_field :salary %>
       </div>
 

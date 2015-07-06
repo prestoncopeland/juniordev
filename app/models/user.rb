@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :jobs, allow_destroy: true, reject_if: :all_blank
 
   validates_associated :jobs
-  validates :name, presence: true
+  validates :name, :website, :email, :telephone, presence: true
 
 
   def set_default_role

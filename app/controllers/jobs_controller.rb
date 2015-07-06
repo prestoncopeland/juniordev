@@ -5,6 +5,10 @@ class JobsController < ApplicationController
     @jobs = Job.where('created_at <= 30.days.ago')
   end
 
+  def show
+    @job = Job.find(params[:id])
+  end
+
   def search
     @term = params[:search]
     @jobs = Job.where('created_at <= 30.days.ago')

@@ -8,6 +8,7 @@ class Job < ActiveRecord::Base
 
   validates :title, :job_type, presence: true
   validates :description, :city, :country, presence: true
+  validates :apply_at_address, presence: true
 
   def set_default_job_type
     self.job_type ||= :all_types

@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
   private
 
   def sign_up_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :telephone, :website, :name, :stripe_token, jobs_attributes: [:id, :job_type, :title, :description, :salary, :city, :state, :country, :zip_code, :_destroy])
+    params.require(:user).permit(:email, :password, :password_confirmation, :telephone, :website, :name, :stripe_token, jobs_attributes: [:id, :job_type, :title, :apply_at_address, :description, :salary, :city, :state, :country, :zip_code, :_destroy])
   end
 
   def mailing_sign_up

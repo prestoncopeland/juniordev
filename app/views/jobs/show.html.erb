@@ -5,10 +5,10 @@
         <h1>
           <%= @job.title %>
         </h1>
-        <p> <%= @job.user.name %>
+        <p>Company: <%= @job.user.name %>
         </p>
         <p>
-          Apply at: <%= @job.user.email%>
+          Apply at: <%= @job.apply_at_address%>
         </p>
         <p>
           Company website: <%= link_to @job.user.website, "http://#{@job.user.website}"%>
@@ -22,7 +22,7 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">
-                Contact Email: <%= @job.user.email %>
+                Contact Email: <%= @job.apply_at_address %>
               </h3>
             </div>
             <div class="panel-body">

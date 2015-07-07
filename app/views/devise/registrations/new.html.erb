@@ -32,22 +32,22 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label "Company name" %><br />
+    <%= f.label "Company name" %> <em>(will be listed)</em><br />
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label "Company website" %> <em>(don't include http://www)</em><br />
+    <%= f.label "Company website" %> <em>(will be listed; don't include http://www)</em><br />
     <%= f.text_field :website, placeholder: "e.g., greatdevs.com" %>
   </div>
 
   <div class="field">
-    <%= f.label "Contact email for applicants"%> <em>(this will also be your login email)</em> <br />
+    <%= f.label "Email"%> <em>(won't be listed; contact email for your account, not where candidates should apply. See below)</em> <br />
     <%= f.email_field :email %>
   </div>
 
   <div class="field">
-    <%= f.label :telephone %> <em>(won't be shared or listed)</em><br />
+    <%= f.label :telephone %> <em>(won't be listed)</em><br />
     <%= f.text_field :telephone %>
   </div>
 
@@ -82,6 +82,11 @@
       <div class="field">
         <%= ff.label 'Job type' %>
         <%= ff.select(:job_type, Job.job_types.keys.map {|job_type| [job_type.titleize,job_type]}) %>
+      </div>
+
+      <div class="field">
+        <%= ff.label "Apply At Email Address" %> <em>(where the applicant should apply)</em>
+        <%= ff.text_field :apply_at_address %>
       </div>
 
       <div class="field">

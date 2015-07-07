@@ -7,12 +7,9 @@
                 </div>
             </div>
 </div>
+
 <div class = "centered">
 <h2>Search Results</h2>
-<% if @jobs.any? %>
-<p>Found: <%= @jobs.total_entries %></p>
-<p><%= will_paginate @jobs %></p>
-<% end %>
 </div>
 
 <div class="search-form wow pulse searchcentered" data-wow-delay="0.8s">
@@ -23,13 +20,14 @@
 <% end %>
 </div>
 
-
-
-
+<div class="centered">
 <% if @jobs.any? %>
+<p>Found: <%= @jobs.total_entries %></p>
 <%= render "job_listing", jobs: @jobs %>
 <% else %>
-<div class="centered">
-<p>No results.</p>
-</div>
+<p>No results. Search again!</p>
 <% end %>
+</div>
+
+
+

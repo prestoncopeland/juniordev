@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :jobs do
     collection { get :search }
+    collection { get :admin_index }
   end
 end

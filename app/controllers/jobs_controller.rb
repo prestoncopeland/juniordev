@@ -1,8 +1,14 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show, :search]
 
+  #see jobs that are less than 30 days old
   def index
-    @jobs = Job.where("created_at >= ?", 30.days.ago).order(created_at: :desc)
+    @jobs = Job.where("created_at >= ?", 30.days.ago).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20)
+  end
+
+  #see all jobs
+  def admin_index
+    @jobs = Job.all.paginate(:page => params[:page], :per_page => 50)
   end
 
   def search

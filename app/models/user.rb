@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
 
   def set_default_role
-    self.role ||= :user
+    self.role ||= :employer
   end
 
   def make_payment

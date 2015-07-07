@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @jobs = Job.all
-    @visitor = Visitor.new
+    @jobs = Job.order(created_at: :desc)
   end
 end

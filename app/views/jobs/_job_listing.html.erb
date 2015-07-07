@@ -14,7 +14,7 @@
 
           <td><p><%=job.user.name%></p></td>
 
-          <td><p><i class="glyphicon glyphicon-globe"></i> <%=job.city%>, <%= job.state.nil? ? job.country : job.state %></p></td>
+          <td><p><i class="glyphicon glyphicon-globe"></i> <%=job.city%>, <% unless job.state.empty? %> <%=job.state %> <% else %> <%= job.country %> <% end %> </p></td>
 
           <td><p><%=job.salary%></p></td>
 

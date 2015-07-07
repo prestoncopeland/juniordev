@@ -7,7 +7,7 @@
 <% end %>
 
 <% if user_signed_in? %>
-    <%= link_to "View account", edit_user_registration_path, :class => "navbar-btn nav-button wow bounceInRight login", :data => { :'wow-delay' => '0.8s' } %>
+    <%= link_to "View/Edit account", edit_user_registration_path, :class => "navbar-btn nav-button wow bounceInRight login", :data => { :'wow-delay' => '0.8s' } %>
     <%= link_to "Sign out", destroy_user_session_path, :method => 'delete', :class => "navbar-btn nav-button wow fadeInRight", :data => { :'wow-delay' => '0.6s' } %>
 <% else %>
     <%= link_to "Log in", new_user_session_path, :class => "navbar-btn nav-button wow bounceInRight login", :data => { :'wow-delay' => '0.8s' } %>

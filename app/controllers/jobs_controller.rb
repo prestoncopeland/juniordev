@@ -2,12 +2,12 @@ class JobsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show, :search]
 
   def index
-    @jobs = Job.where('created_at <= 30.days.ago')
+    @jobs = Job.where("created_at >= ?", 30.days.ago).order(created_at: :desc)
   end
 
   def search
     @term = params[:search]
-    @jobs = Job.where('created_at <= 30.days.ago')
+    @jobs = Job.where("created_at >= ?", 30.days.ago)
     if params[:search].present?
       @query = Job.search do
           keywords params[:search]

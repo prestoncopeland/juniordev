@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :stripe_token
 
-  has_many :jobs
+  has_many :jobs, dependent: :destroy
   accepts_nested_attributes_for :jobs, allow_destroy: true, reject_if: :all_blank
 
   validates_associated :jobs

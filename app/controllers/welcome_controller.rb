@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @jobs = Job.order(created_at: :desc)
+    @jobs = Job.where('created_at <= 30.days.ago').order(created_at: :desc)
   end
 end

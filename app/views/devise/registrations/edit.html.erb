@@ -1,11 +1,37 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class = "centered">
+<h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
+
+<div class="centered">
+  <p>All fields below are required except zip code and state.</p>
+</div>
+<div class="centered">
+   <h2>Company Information</h2>
+
+</div> <!-- end class centered -->
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+  <div class='fieldset boxed'>
+
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label "Company name" %> <em>(will be listed)</em><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Company website" %> <em>(will be listed; don't include http://www)</em><br />
+    <%= f.text_field :website, placeholder: "e.g., greatdevs.com" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Email"%> <em>(won't be listed; contact email for your account, not where candidates should apply. See below)</em> <br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone %> <em>(won't be listed)</em><br />
+    <%= f.text_field :telephone %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -27,13 +53,73 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+</div> <!-- end div fieldset boxed -->
+
+  <div class="centered">
+
+  <h2> Job Post(s) </h2>
+  </div>
+
+  <div class="boxed">
+  <%= f.fields_for :jobs do |ff| %>
+      <div class="field">
+        <%= ff.label "Position" %>
+        <%= ff.text_field :title, placeholder: "e.g., Rails Developer" %>
+      </div>
+
+      <div class="field">
+        <%= ff.label 'Job type' %>
+        <%= ff.select(:job_type, Job.job_types.keys.map {|job_type| [job_type.titleize,job_type]}) %>
+      </div>
+
+      <div class="field">
+        <%= ff.label "Apply At Email Address" %> <em>(where the applicant should apply)</em>
+        <%= ff.text_field :apply_at_address %>
+      </div>
+
+      <div class="field">
+        <%= ff.label 'Description' %>
+        <%= ff.text_area :description, :rows=>20, :cols=>100, placeholder: %{e.g., Overview: Seeking a junior developer who is passionate about --- ... Qualifications: You should have a strong portfolio ... Responsibilities: For this position, you will ... Benefits: We offer ... etc.} %>
+      </div>
+
+      <div class="field">
+        <%= ff.label 'Salary' %> <em>('DOE' is default; feel free to change; use this format: $90,000 or $60,000-85,000)</em>
+        <%= ff.text_field :salary %>
+      </div>
+
+      <div class="field">
+        <%= ff.label 'City' %>
+        <%= ff.text_field :city %>
+      </div>
+
+      <div class="form-group">
+        <%= ff.label :state %>
+        <%= ff.select(:state, us_states) %>
+      </div>
+
+      <div class="form-group">
+        <%= ff.label :zip_code %>
+        <%= ff.text_field :zip_code %>
+      </div>
+
+      <div class="form-group">
+        <%= ff.label :country %>
+        <%= ff.country_select(:country, priority_countries: ["US", "CA", "MX"]) %>
+      </div>
+
+  <% end %>
+  </div> <!-- end class boxed for job-->
+
+  <div class="centered">
+    <%= f.submit "Update", :class => "navbar-btn nav-button wow bounceInRight login" %>
   </div>
 <% end %>
 
+<div class = "centered">
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<span>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :class => "navbar-btn nav-button wow bounceInRight login", data: { confirm: "Are you sure?" }, method: :delete %></span>
 
 <%= link_to "Back", :back %>
+</div>
+</div> <!-- end div centered -->

@@ -1,5 +1,29 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>Website: <%= @user.website if @user.website %></p>
-<p>Telephone: <%= @user.telephone if @user.telephone %></p>
+<div class="container-fluid boxed">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>User</h3>
+      <p>Name: <%= @user.name %></p>
+      <p>Email: <%= @user.email %></p>
+      <p>Website: <%= @user.website %></p>
+      <p>Telephone: <%= @user.telephone %></p>
+    </div>
+  </div>
+  <% @user.jobs.each do |job| %>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Job Title: <%= job.title %></p>
+      <p>Job Type: <%= job.job_type %></p>
+      <p>Posted on: <%= job.created_at %></p>
+      <p>Salary: <%= job.salary %></p>
+      <p>City: <%= job.city %></p>
+      <p>State: <%= job.state if job.state %></p>
+      <p>Zip Code: <%= job.zip_code if job.zip_code %></p>
+      <p>Country: <%= job.country %> </p>
+    </div>
+    <div class="col-md-6">
+      <p>Description: <%= job.description %></p>
+    </div>
+  </div>
+  <% end %>
+
+</div>

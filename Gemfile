@@ -31,8 +31,6 @@ gem 'high_voltage'
 
 gem 'country_select'
 
-gem 'sunspot_rails'
-
 gem 'pg_search'
 
 gem 'jquery-ui-rails'
@@ -47,9 +45,6 @@ gem 'sucker_punch'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development do
-  gem 'sunspot_solr'
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

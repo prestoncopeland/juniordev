@@ -1,9 +1,9 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
-    <%= link_to 'Users', users_path, :class => "navbar-btn nav-button wow bounceInRicht login", :data => {:'wow-delay' => '0.8s' } %>
-    <%= link_to 'Visitors', visitors_path, :class => "navbar-btn nav-button wow bounceInRicht login", :data => {:'wow-delay' => '0.8s' } %>
-    <%= link_to 'All Jobs', admin_index_jobs_path, :class => "navbar-btn nav-button wow bounceInRicht login" %>
+    <%= link_to 'Users', users_path, :class => "navbar-btn nav-button wow bounceInRight login", :data => {:'wow-delay' => '0.8s' } %>
+    <%= link_to 'Visitors', visitors_path, :class => "navbar-btn nav-button wow bounceInRight login", :data => {:'wow-delay' => '0.8s' } %>
+    <%= link_to 'All Jobs', admin_index_jobs_path, :class => "navbar-btn nav-button wow bounceInRight login" %>
   <% end %>
 <% end %>
 

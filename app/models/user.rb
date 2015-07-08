@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-
-
   enum role: [:user, :admin, :employer]
   after_initialize :set_default_role, :if => :new_record?
   before_create :make_payment, unless: Proc.new { |user| user.admin? }

@@ -79,8 +79,9 @@
       </div>
 
       <div class="field">
-        <%= ff.label 'Description' %>
-        <%= ff.text_area :description, :rows=>20, :cols=>100, placeholder: %{e.g., Overview: Seeking a junior developer who is passionate about --- ... Qualifications: You should have a strong portfolio ... Responsibilities: For this position, you will ... Benefits: We offer ... etc.} %>
+        <%= ff.label 'Description' %> <em>(include your company's name and website at least once for optimal search results)</em>
+        <%= ff.text_area :description, :class => "tinymce", :rows=>20, :cols=>100%>
+        <%= tinymce %>
       </div>
 
       <div class="field">
@@ -120,7 +121,7 @@
 <div class = "centered">
 <h3>Cancel my account</h3>
 
-<span>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :class => "navbar-btn nav-button wow bounceInRight login", data: { confirm: "Are you sure?" }, method: :delete %></span>
+<span>Unhappy? <%= button_to "Cancel My Account", registration_path(resource_name), :class => "navbar-btn nav-button wow bounceInRight login", data: { confirm: "Are you sure?" }, method: :delete %></span>
 
 <%= link_to "Back", :back %>
 </div>

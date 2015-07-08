@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require tinymce
 //= require bootstrap-sprockets
 //= require_tree .

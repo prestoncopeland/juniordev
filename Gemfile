@@ -43,6 +43,8 @@ gem 'gibbon'
 
 gem 'sucker_punch'
 
+gem 'tinymce-rails'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

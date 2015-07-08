@@ -187,6 +187,8 @@ GEM
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
+    tinymce-rails (4.1.6)
+      railties (>= 3.1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -228,6 +230,7 @@ DEPENDENCIES
   spring
   stripe
   sucker_punch
+  tinymce-rails
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   will_paginate (~> 3.0.7)

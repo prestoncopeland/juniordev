@@ -15,6 +15,12 @@
         <h3>Listing Criteria</h3>
       <p>JuniorSoftwareDeveloper.com is not liable for the accuracy of information contained within a given job post. Furthermore, it reserves the right to remove posts it deems racist, pornographic, illegal, or otherwise hazardous. Posters must have the right to represent their companies. Posters must be over 18.</p>
 
+        <h3>How Do I Edit A Job Post?</h3>
+      <p>Sign in to your account and click on "View/Edit Account." There you'll have an opportunity to edit the job post.</p>
+
+        <h3>How Do I Delete A Job Post?</h3>
+      <p>Sign in to your account and click on "View/Edit Account." At the bottom, clicking on the "Cancel My Account" button will cancel your account and delete the job post.</p>
+
 </div> <!-- end div container -->
 <div class="centered">
   <p>All fields below are required except zip code and state.</p>
@@ -91,8 +97,9 @@
       </div>
 
       <div class="field">
-        <%= ff.label 'Description' %>
-        <%= ff.text_area :description, :rows=>20, :cols=>100, placeholder: %{e.g., Overview: Seeking a junior developer who is passionate about --- ... Qualifications: You should have a strong portfolio ... Responsibilities: For this position, you will ... Benefits: We offer ... etc.} %>
+        <%= ff.label 'Description' %> <em>(include your company's name and website at least once for optimal search results)</em>
+        <%= ff.text_area :description, :class => "tinymce", :rows=>20, :cols=>100%>
+        <%= tinymce %>
       </div>
 
       <div class="field">

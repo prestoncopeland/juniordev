@@ -1,3 +1,3 @@
 == README
 
-This is an application to enable junior software developers to find jobs and employers seeking junior developers the ability to post job listings specifically tailored to junior developers.
+This is an application that allows junior software developers to search specifically for junior-level or entry-level jobs. The application also allows employers to post job listings that specifically target junior developers.

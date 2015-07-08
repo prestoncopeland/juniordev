@@ -79,9 +79,10 @@
         <%= ff.text_field :title, placeholder: "e.g., Rails Developer" %>
       </div>
 
+<!-- job_types method in form_helper.rb -->
       <div class="field">
         <%= ff.label 'Job type' %>
-        <%= ff.select(:job_type, Job.job_types.keys.map {|job_type| [job_type.titleize,job_type]}) %>
+        <%= ff.select(:job_type, job_types) %>
       </div>
 
       <div class="field">
@@ -104,6 +105,7 @@
         <%= ff.text_field :city %>
       </div>
 
+<!-- us_states method in form_helper.rb -->
       <div class="form-group">
         <%= ff.label :state %>
         <%= ff.select(:state, us_states) %>

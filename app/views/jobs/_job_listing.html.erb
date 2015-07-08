@@ -14,7 +14,7 @@
         <!--The above (1+index) is to stagger the appearance of the jobs in the table -->
           <td class="tbl-title"><h4><%= link_to job.title, job%> </h4></td>
 
-          <td><p><%=job.user.name%> : <%=job.job_type.humanize%></p></td>
+          <td><p><%=job.user.name%> : <%=job.job_type%></p></td>
 
           <td><p><i class="glyphicon glyphicon-globe"></i> <%=job.city%>, <% unless job.state.empty? %> <%=job.state %> <% else %> <%= job.country %> <% end %> </p></td>
 

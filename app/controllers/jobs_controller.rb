@@ -12,16 +12,9 @@ class JobsController < ApplicationController
   end
 
   def search
-    @term = params[:search]
-    @jobs = Job.where("created_at >= ?", 30.days.ago)
-    if params[:search].present?
-      @query = Job.search do
-          keywords params[:search]
-          paginate :page => params[:page], :per_page => 10
-      end
-      @jobs = @query.results
-    else
-      @jobs = []
+    @jobs = Job.where("created_at >= ?", 30.days.ago).paginate(:page => params[:page], :per_page => 20)
+    if(params[:search].present?)
+      @jobs = Job.where("created_at >= ?", 30.days.ago).order(created_at: :desc).paginate(:page => params[:page], :per_page => 20).search_jobs(params[:search])
     end
   end
 

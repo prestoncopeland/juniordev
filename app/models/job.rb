@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-
+  include PgSearch
 
   belongs_to :user
 
@@ -14,9 +14,6 @@ class Job < ActiveRecord::Base
     self.job_type ||= :all_types
   end
 
-  searchable do
-    text :title, :description, :salary, :job_type
-    text :city, :state, :country, :zip_code
-  end
+  pg_search_scope :search_jobs, :against => [:title, :description, :salary, :job_type, :city, :state, :country, :zip_code]
 
 end

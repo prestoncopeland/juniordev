@@ -21,8 +21,8 @@
 </div>
 
 <div class="centered">
-<% if @jobs.any? %>
-<p>Found: <%= @jobs.total_entries %></p>
+<% unless @jobs.nil? %>
+<p>Found: <%= @jobs.size %></p>
 <%= render "job_listing", jobs: @jobs %>
 <% else %>
 <p>No results. Search again!</p>

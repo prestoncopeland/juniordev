@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+
   enum role: [:user, :admin, :employer]
   after_initialize :set_default_role, :if => :new_record?
   before_create :make_payment, unless: Proc.new { |user| user.admin? }
@@ -11,6 +13,7 @@ class User < ActiveRecord::Base
   validates_associated :jobs
   validates :name, :website, :email, :telephone, presence: true
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
+
 
   def set_default_role
     self.role ||= :employer

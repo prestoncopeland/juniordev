@@ -38,6 +38,8 @@ gem 'sucker_punch'
 
 gem 'tinymce-rails'
 
+gem 'sprockets-redirect'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :production do

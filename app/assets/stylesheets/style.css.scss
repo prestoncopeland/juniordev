@@ -464,7 +464,7 @@ background-color: #00aeef;
 
 
 .job-add{
-  background: url(asset-path('job-add.png'))
+  background-image: url(image_path('job-add.png'));
 	height: 500px;
 }
 .job-add h2 {

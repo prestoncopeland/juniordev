@@ -13,6 +13,6 @@ Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
                                   "fontawesome-webfont.ttf",
                                  "fontawesome-webfont.eot",
                                  "fontawesome-webfont.svg",
-                                 "fontawesome-webfont.woff")
+                                 "fontawesome-webfont.woff", 'animate.css', 'bootstrap-theme.css', 'bootstrap.min.css', 'font-awesome.min.css', 'fontello.css', 'normalize.css', 'owl.carousel.css', 'owl.theme.css', 'owl.transitions.css')
 
 

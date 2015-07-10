@@ -40,6 +40,8 @@ gem 'tinymce-rails'
 
 gem 'sprockets-redirect'
 
+gem 'owlcarousel-rails'
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :production do

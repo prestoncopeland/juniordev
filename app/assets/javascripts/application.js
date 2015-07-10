@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require owl.carousel
 //= require tinymce
 //= require bootstrap-sprockets
 //= require_tree .

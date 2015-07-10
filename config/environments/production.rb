@@ -1,7 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-
+  # Precompile *all* assets, except those that start with underscore
+  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   # Code is not reloaded between requests.
   config.cache_classes = true
 

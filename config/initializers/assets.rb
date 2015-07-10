@@ -9,10 +9,7 @@ Rails.application.config.assets.version = '1.2'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 #Rails.application.config.assets.precompile += %w(  )
-Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif,
-                                  "fontawesome-webfont.ttf",
-                                 "fontawesome-webfont.eot",
-                                 "fontawesome-webfont.svg",
-                                 "fontawesome-webfont.woff", 'animate.css', 'bootstrap-theme.css', 'bootstrap.min.css', 'font-awesome.min.css', 'fontello.css', 'normalize.css', 'owl.carousel.css', 'owl.theme.css', 'owl.transitions.css')
+
+Rails.application.config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif fontawesome-webfont.ttf fontawesome-webfont.eot fontawesome-webfont.svg fontawesome-webfont.woff animate.css bootstrap-theme.css bootstrap.min.css font-awesome.min.css fontello.css normalize.css owl.carousel.css owl.theme.css owl.transitions.css)
 
 

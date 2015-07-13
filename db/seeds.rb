@@ -9,17 +9,19 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 langs = %w(Ruby Erlang Haskell Java C# Python Lisp)
+cities = %w(Boston Miami Atlanta Denver Richmond)
+st = %w(Massachusetts Florida Georgia Colorado Virginia)
 
-(1..20).each do |i|
+(1..5).each do |i|
   Job.create!(
     title: "#{langs[i%7]} developer",
     job_type: "All types",
-    description: %{Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat purus dapibus fermentum sagittis. Fusce in tempus felis. Phasellus a erat ut lorem lacinia bibendum.},
-    salary: "$#{i*1000}.00",
+    description: %{This is a sample job post. Some information about qualifications, benefits, and job responsibilities would typically appear here.},
+    salary: "$#{i*10000+50000}",
     apply_at_address: "jsd@example.com",
-    city: "Boston",
-    state: "Massachusetts",
+    city: "#{cities[i%5]}",
+    state: "#{st[i%5]}",
     country: "USA",
-    zip_code: "01234",
+    zip_code: "00000",
     user_id: user.id)
 end

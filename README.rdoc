@@ -1,3 +1,7 @@
 == README
 
 This is an application that allows junior software developers to search specifically for junior-level or entry-level jobs. The application also allows employers to post job listings that specifically target junior developers.
+
+Technical highlights include: asynchronous processing of mailing list signup with ActiveJob, MailChimp mailing list via Gibbon, secure payment processing with Stripe.js, overriding Devise registrations controller to allow payment to occur at the same time as registration, and full-text search of jobs with the Pg_search gem.
+
+It lives at juniorsoftwaredeveloper.com.
